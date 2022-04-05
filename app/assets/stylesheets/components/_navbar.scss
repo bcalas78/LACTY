@@ -8,5 +8,14 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  border-radius: 10px;
+}
+
+.navbar-lewagon .avatar {
+  width: 70px;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
 }
