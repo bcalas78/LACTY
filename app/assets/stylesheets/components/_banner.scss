@@ -2,8 +2,8 @@
   background-size: cover;
   background-position: center;
   padding: 10px 0;
-  border-radius: 50%;
-  margin: 10px 0px;
+  // border-radius: 50%;
+  margin-bottom: 5px;
 }
 
 .banner h1 {
@@ -13,12 +13,16 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   font-size: 50px;
   font-weight: bold;
+  padding-bottom: 5px;
 }
 
-.banner p {
+.banner h3 {
   text-align: center;
-  font-size: 25px;
+  font-size: 17px;
+  margin: 0;
   color: white;
-  opacity: .7;
+  opacity: .6;
+  padding-bottom: 5px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-weight: bold;
 }
