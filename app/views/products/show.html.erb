@@ -1,18 +1,22 @@
 <div class="hello">
 <div class="card-product">
-  <img src="" />
+  <img src="https://fr.openfoodfacts.org/images/products/302/176/950/5602/front_fr.80.full.jpg" />
   <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+    <%# <h2>Product name</h2> %>
+    <h2>Pom'Potes Pomme Nature</h2>
+    <%= image_tag "Licorne-verte-100.png"%>
   </div>
 </div>
 
-<div class="description-vert">
-  <h2>Tout est bon dans le <%= @product %>!</h2>
+<div class="description-vert text-center">
+  <h2>Tout est bon dans Pom'Potes Pomme Nature!</h2>
+  <%# <h2>Tout est bon dans le <%= @product %>
+  <%#!</h2> %>
+
 </div>
 
 <div class="tabs">
-  <ul class="list-inline tabs-underlined">
+  <ul class="list-inline tabs-underlined d-flex justify-content-between pt-2">
     <li>
       <a href="#" class="tab-underlined active">Composition</a>
     </li>
@@ -23,8 +27,14 @@
 </div>
 
 <div class="big-card">
-  <p>Voici la session composition</p>
+  <p>Pomme 99,7% (purée et purée concentrée), arôme naturel de pomme, jus de citron concentré, antioxydant : acide ascorbique.</p>
 </div>
+
+<div class="redirection-links d-flex justify-content-evenly mt-4">
+  <a href="/scanner" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>
+  <a href="/search" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Recherche</a>
+</div>
+
 </div>
 
 
