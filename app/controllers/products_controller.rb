@@ -9,6 +9,12 @@ class ProductsController < ApplicationController
   end
 
   def show
+    # instancier le produit (id) + instancier la catégorie du produit
+  end
+
+  def search
+    # @products = Product.all
+    # @product.where(:name )
   end
 
   def create
