@@ -18,26 +18,26 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    #orange
-    compositions = @product.composition.split(",")
-    compositions.each do |composition|
-    if composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
-      @product.category = Category.find_by(name: "orange")
-      elsif composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
-      @product.category = Category.find_by(name: "red")
-      #vert
-      else
+  #   @product = Product.new(product_params)
+  #   #orange
+  #   compositions = @product.composition.split(",")
+  #   compositions.each do |composition|
+  #   if composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
+  #     @product.category = Category.find_by(name: "orange")
+  #     elsif composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
+  #     @product.category = Category.find_by(name: "red")
+  #     #vert
+  #     else
 
-    end
-    end
+  #   end
+  #   end
 
 
-    if @product.save!
-      redirect_to product_path(@product)
-    else
-    #  render :show
-    end
+  #   if @product.save!
+  #     redirect_to product_path(@product)
+  #   else
+  #   #  render :show
+  #   end
   end
 
   private
