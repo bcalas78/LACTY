@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.find(params[:id])
   end
 
@@ -18,7 +19,7 @@ class ProductsController < ApplicationController
       @product.category = Category.find_by(name: "orange")
     elsif !! (@product.composition =~ /(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in|babeurre|yaourt)/)
       @product.category = Category.find_by(name: "red")
-    else !! (@product.composition =~ /(sans lait|sans lactose|  )/)
+    elsif !! (@product.composition =~ /(sans lait|sans lactose|  )/)
       @product.category = Category.find_by(name: "green")
     end
     # @product.category_id = category_id
@@ -28,7 +29,36 @@ class ProductsController < ApplicationController
     else
       render :scanner
     end
+    # instancier le produit (id) + instancier la catégorie du produit
   end
+
+  def search
+    # @products = Product.all
+    # @product.where(:name )
+  end
+
+ # def create
+  #   @product = Product.new(product_params)
+  #   #orange
+  #   compositions = @product.composition.split(",")
+  #   compositions.each do |composition|
+  #   if composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
+  #     @product.category = Category.find_by(name: "orange")
+  #     elsif composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
+  #     @product.category = Category.find_by(name: "red")
+  #     #vert
+  #     else
+
+  #   end
+  #   end
+
+
+  #   if @product.save!
+  #     redirect_to product_path(@product)
+  #   else
+  #   #  render :show
+  #   end
+ # end
   # if @product.composition.include?("lait")
   #   @product.category = Category.find_by(name: "orange")
   # elsif @product.composition.include?("babeurre")
