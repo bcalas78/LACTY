@@ -2,7 +2,7 @@
 
 <div class="hello">
   <div class="card-product">
-    <img src="https://fr.openfoodfacts.org/images/products/302/176/950/5602/front_fr.80.full.jpg" />
+    <%= image_tag @product.image %>
     <div class="card-product-infos">
       <%# <h2>Product name</h2> %>
       <h2><%= @product.name %></h2>
@@ -14,6 +14,7 @@
         <%= image_tag "Licorne-orange.png"%>
       <% end %>
     </div>
+
   </div>
 </div>
 
@@ -32,6 +33,8 @@
     </ul>
   </div>
 
+
+<%= @product.image %>
 
 <div class="big-card">
   <p><%= @product.composition%></p>
