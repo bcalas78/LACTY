@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def scanner
     @product = Product.new
@@ -6,6 +7,14 @@ class ProductsController < ApplicationController
   end
 
   def index
+
+    # if params[:query].present?
+    #   sql_query = "name ILIKE :query OR composition ILIKE :query"
+    #   @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @products = Product.all
+    # end
+
   end
 
   def show
