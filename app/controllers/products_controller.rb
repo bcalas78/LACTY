@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def scanner
     @product = Product.new
     render :scanner
@@ -9,7 +8,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-
     @product = Product.find(params[:id])
   end
 

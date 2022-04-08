@@ -1,1 +1,19 @@
-<h1>INDEX PRODUCTS</h1>
+<h1>Mes Produits</h1>
+<% @products = Product.all %>
+<div class="row">
+  <div class="col-12">
+      <% @products.first(5).each do |product| %>
+        <div class="card cover">
+         <%# <%= cl_image_tag e_scooter.photo.key, crop: :fill %>
+          <div class="card-body">
+            <h5 class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<div class="redirection-links d-flex justify-content-evenly mt-4 fixed-bottom">
+  <a href="/scanner" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>
+  <a href="/search" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Recherche</a>
+</div>
