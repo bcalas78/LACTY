@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :category
 
   validates :name, presence: true
-  # validates :composition, presence: true
+  validates :composition, presence: true
+  validates :image, presence: true
 
 end
