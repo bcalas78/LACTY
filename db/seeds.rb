@@ -15,6 +15,8 @@ orange = Category.new(name: "orange")
 orange.save!
 green = Category.new(name: "green")
 green.save!
+white = Category.new(name: "white")
+white.save!
 
 product1 = Product.new(name: "Pom'Potes Pomme Nature", description: "Tout est bon dans Pom'Potes Pomme Nature !", composition: "Pomme 99,7% (purée et purée concentrée), arôme naturel de pomme, jus de citron concentré, antioxydant : acide ascorbique.")
 product1.category = green
