@@ -1,0 +1,18 @@
+<div>
+  <script src="https://unpkg.com/scandit-sdk@5.x"></script>
+  <div id="scandit-barcode-picker" style ="width:400px; heigth:400px;"></div>
+</div>
+
+<%= simple_form_for @product, method: :post  do |f| %>
+<%= f.input :name %>
+<%= f.input :composition %>
+<% end %>
+
+  <%# html:{class:"d-none"} , %>
+
+<div class="redirection-links d-flex justify-content-evenly mt-4">
+<%= link_to product_path(@product1), class:  "btn btn-search" do %>
+<i class="fa-solid fa-magnifying-glass"></i><p>Page produit</p>
+<% end %>
+  <%# <a href="/products/id" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Page du produit</a> %>
+</div>
