@@ -12,11 +12,12 @@
         <%= image_tag "Licorne-orange.png"%>
       <% end %>
     </div>
-
   </div>
 </div>
 
 <div class="description-vert text-center">
+  <%# <h2>Tout est bon dans Pom'Potes Pomme Nature !</h2> %>
+  <%# <h2>Tout est bon dans <%= @product.name%>!</h2> %>
   <% if @product.category.id == 3 %>
         <h2>Tout est bon dans <%= @product.name%>!</h2>
   <% elsif @product.category.id == 1 %>
@@ -24,23 +25,23 @@
   <% else @product.category.id == 2 %>
         <h2>Attention avec <%= @product.name%>!</h2>
   <% end %>
-
-
-  <div class="tabs">
-    <ul class="list-inline tabs-underlined d-flex justify-content-between pt-2">
-      <li>
-        <a href="#" class="tab-underlined active">Composition</a>
-      </li>
-      <li>
-        <a href="#" class="tab-underlined">Commentaires</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="big-card">
-    <p><%= @product.composition%></p>
-  </div>
 </div>
+
+<div class="tabs">
+  <ul class="list-inline tabs-underlined d-flex justify-content-between pt-2">
+    <li>
+      <a href="#" class="tab-underlined active">Composition</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">Commentaires</a>
+    </li>
+  </ul>
+</div>
+
+<div class="big-card">
+  <p><%= @product.composition%></p>
+</div>
+
 <div class="redirection-links d-flex justify-content-evenly mt-4 fixed-bottom">
   <a href="/products/new" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>
   <a href="/search" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Recherche</a>
