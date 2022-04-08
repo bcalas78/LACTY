@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def scanner
     @product = Product.new
+    @product1 = Product.find_by(name: "Pom'Potes Pomme Nature")
     render :scanner
   end
 
