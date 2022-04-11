@@ -10,32 +10,43 @@ class ProductsController < ApplicationController
       sql_query = "name ILIKE :query OR composition ILIKE :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
-      # @products = Product.all
-      render :index
+      @products = Product.all
     end
   end
 
   def show
     @product = Product.find(params[:id])
-    @review = Review.new
   end
 
   def create
     @product = Product.new(product_params)
-    if !!(@product.composition =~ /(lait|fromage|  beurre  |margarine|ferments lactiques)/)
+    @name = @product.name
+    if Product.exists?(name: @name)
+      @product = Product.find_by(name: @name)
+      @product.update(product_params)
+    else
+      @product = Product.create(product_params)
+      if !!(@product.composition =~ (/\w*(fromage|beurre,|margarine|ferments|lactiques)\w*/i))
       @product.category = Category.find_by(name: "orange")
-    elsif !!(@product.composition =~ /(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in|babeurre|yaourt)/)
+      elsif !!(@product.composition =~ (/\w*(lait |_lait_| lait|cr(e|è|é)me|lactosérum|lact(o|a|u)se|cas(e|è|é)in|babeurre|yaourt)\w*/i))
       @product.category = Category.find_by(name: "red")
-    elsif !!(@product.composition =~ /(sans lait|sans lactose|  )/)
-      @product.category = Category.find_by(name: "green")
+      elsif !!(@product.composition =~ (/\w*(sans lait|sans lactose|  )\w*/i))
+        @product.category = Category.find_by(name: "green")
+      else
+        @product.category = Category.find_by(name: "green")
+      end
     end
-
     if @product.save
       redirect_to product_path(@product)
     else
       render :new
     end
     # instancier le produit (id) + instancier la catégorie du produit
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   def search
@@ -49,16 +60,3 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :composition, :image)
   end
 end
-#    compositions = @product.composition.split
-#    compositions.each do |composition|
-#      # /^lait$/i
-#  if composition.match(/^(lait|fromage|beurre|margarine|ferments lactiques)$/i)
-#    @product.category_id = Category.find_by_color("orange")
-#  elsif composition.match(/\w*(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in)|babeurre|yaourt\w*/i)
-#    @product.category_id = Category.find_by(name: "red")
-#  elsif composition.match(/\w*(sans lait|sans lactose|  )\w*/i)
-#    @product.category_id = Category.find_by(name: "green")
-#  else
-#    @product.category_id = Category.find_by(name: "green")
-#  end
-#    end
