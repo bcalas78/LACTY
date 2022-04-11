@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if !!(@product.composition =~ /(lait|fromage|beurre|margarine|ferments lactiques)/)
+    if !!(@product.composition =~ /(lait|fromage|  beurre  |margarine|ferments lactiques)/)
       @product.category = Category.find_by(name: "orange")
     elsif !!(@product.composition =~ /(lait|cr(e|è|é)me|lact(u|a|o)|cas(e|è|é)in|babeurre|yaourt)/)
       @product.category = Category.find_by(name: "red")
