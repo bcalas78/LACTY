@@ -7,12 +7,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
-    if params[:search_by_name] && params[:search_by_name] != ""
-    @products = Product.where("name ILIKE ?",
-                                "%# {params[:search_by_name]}%")
-    # if params[:query].present?
-    #   @products = Product.where(name: params[:query])
+    if params[:query].present?
+      @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @products = Product.all
     end
@@ -20,6 +16,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def create
@@ -31,9 +28,9 @@ class ProductsController < ApplicationController
     else
       @product = Product.create(product_params)
       if !!(@product.composition =~ (/\w*(fromage|beurre,|margarine|ferments|lactiques)\w*/i))
-      @product.category = Category.find_by(name: "orange")
+        @product.category = Category.find_by(name: "orange")
       elsif !!(@product.composition =~ (/\w*(lait |_lait_| lait|cr(e|è|é)me|lactosérum|lact(o|a|u)se|cas(e|è|é)in|babeurre|yaourt)\w*/i))
-      @product.category = Category.find_by(name: "red")
+        @product.category = Category.find_by(name: "red")
       elsif !!(@product.composition =~ (/\w*(sans lait|sans lactose|  )\w*/i))
         @product.category = Category.find_by(name: "green")
       else
@@ -54,8 +51,6 @@ class ProductsController < ApplicationController
   end
 
   def search
-    # @products = Product.all
-    # @product.where(:name )
   end
 
   private

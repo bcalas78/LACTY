@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :products do
+  get "search", to: "products#search"
+  resources :products, except: :destroy do
     resources :reviews, only: :create
   end
   # resources :reviews, except: [:show, :create]
