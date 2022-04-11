@@ -28,9 +28,9 @@ class ProductsController < ApplicationController
     else
       @product = Product.create(product_params)
       if !!(@product.composition =~ (/\w*(fromage|beurre,|margarine|ferments|lactiques)\w*/i))
-      @product.category = Category.find_by(name: "orange")
+        @product.category = Category.find_by(name: "orange")
       elsif !!(@product.composition =~ (/\w*(lait |_lait_| lait|cr(e|è|é)me|lactosérum|lact(o|a|u)se|cas(e|è|é)in|babeurre|yaourt)\w*/i))
-      @product.category = Category.find_by(name: "red")
+        @product.category = Category.find_by(name: "red")
       elsif !!(@product.composition =~ (/\w*(sans lait|sans lactose|  )\w*/i))
         @product.category = Category.find_by(name: "green")
       else

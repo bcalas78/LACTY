@@ -1,7 +1,7 @@
-.description-vert {
-  padding-top: 15px;
-  overflow: auto;
-  height: 110px;
+.description {
+  padding: 5px 0px;
+  overflow: scroll;
+  height: auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
