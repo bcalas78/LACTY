@@ -1,11 +1,10 @@
 
 <h1 style="color: white" class="text-center">Résultats de la Recherche</h1>
-<% @products = Product.all %>
 <div class="row mb-5">
   <div class="col-12">
       <% @products.first(5).each do |product| %>
         <div class="card-product">
-         <%# <%= cl_image_tag e_scooter.photo.key, crop: :fill %>
+         <%# <%= image_tag @product.image, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
           </div>

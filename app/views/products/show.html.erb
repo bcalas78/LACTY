@@ -22,6 +22,7 @@
   <% if @product.category.id == 3 %>
         <h2>Tout est bon dans <strong><%= @product.name%></strong>!</h2>
   <% elsif @product.category.id == 2 %>
+
         <h2>Vérifier la compatibilité de <strong><%= @product.name%></strong> en fonction de votre degré d'intolérance</h2>
         <p>En savoir plus: <a href="#">fromage</a>
         <a href="#"> chocolat</a>
@@ -58,8 +59,8 @@
       <% end %>
     <% end %>
   </div>
-  <%= simple_form_for([ @product], remote: true) do |f| %>
-  <%# <%= f.input :comment, as: :text, label: "Votre commentaire:" %>
+  <%= simple_form_for([ @product, @review ], remote: true) do |f| %>
+  <%= f.input :comment, as: :text, label: "Votre commentaire:" %>
   <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
 <% end %>
 </div>
