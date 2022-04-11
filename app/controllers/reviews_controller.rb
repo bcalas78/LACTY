@@ -22,6 +22,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    set_review if user_signed_in? && current_user_id == @user_id
   end
 
   def update
