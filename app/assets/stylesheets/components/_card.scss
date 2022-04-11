@@ -1,18 +1,19 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-top: 50px;
-  justify-content: space-between;
+  margin-top: 35px;
+  padding: 5px 0px;
+  justify-content: start;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
-  object-fit: cover;
+  width: 140px;
+  object-fit: contain;
 }
 
 .card-product h2 {

@@ -1,12 +1,27 @@
-.big-card {
+.big-card1 {
   overflow: hidden;
-  height: 250px;
+  height: 300px;
   background: white;
   display: flex;
   align-items: center;
   padding: 0px 10px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+  p{
+    color: black;
+  }
 }
 
-.big-card p {
-  color: black;
+.big-card2 {
+  overflow: hidden;
+  height: 300px;
+  background: white;
+  padding: 0px 10px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+  p{
+    color: black;
+  }
 }

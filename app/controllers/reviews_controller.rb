@@ -11,12 +11,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
-    @review.user = current_user
+    @review.product = @product
     if @review.save
-      # redirect_to product_id_path
+      redirect_to product_path(@product, anchor: "review-#{@review.id}")
     else
-      render :new
+      render 'products/show'
     end
   end
 
@@ -28,15 +29,15 @@ class ReviewsController < ApplicationController
     # redirect_to review_path
   end
 
-  def destroy
-    @review.destroy
-    # redirect_to root_path
-  end
+  # def destroy
+  #   @review.destroy
+  #   # redirect_to root_path
+  # end
 
   private
 
   def set_review
-    @review = EScooter.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def review_params

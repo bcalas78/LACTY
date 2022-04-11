@@ -10,12 +10,14 @@ class ProductsController < ApplicationController
       sql_query = "name ILIKE :query OR composition ILIKE :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
-      @products = Product.all
+      # @products = Product.all
+      render :index
     end
   end
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def create
