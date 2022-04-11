@@ -3,7 +3,6 @@
   <div class="card-product">
     <%= image_tag @product.image, crop: :fill %>
     <div class="card-product-infos">
-      <%# <h2>Product name</h2> %>
       <h2><%= @product.name %></h2>
       <% if @product.category.name == "green" %>
         <%= image_tag "Licorne-verte.png" %>
@@ -59,6 +58,7 @@
       <% end %>
     <% end %>
   </div>
+
   <%= simple_form_for([ @product, @review], remote: true) do |f| %>
   <%= f.input :comment, as: :text, label: "Votre commentaire:" %>
   <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
