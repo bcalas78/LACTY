@@ -4,7 +4,7 @@
   <div class="col-12">
       <% @products.first(5).each do |product| %>
         <div class="card-product">
-         <%# <%= image_tag @product.image, crop: :fill %>
+         <%= image_tag product.image, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
           </div>

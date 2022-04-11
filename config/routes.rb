@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get "search", to: "products#search"
   resources :products do
     resources :reviews, only: :create
   end
