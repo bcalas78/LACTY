@@ -7,12 +7,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
-    if params[:search_by_name] && params[:search_by_name] != ""
-    @products = Product.where("name ILIKE ?",
-                                "%# {params[:search_by_name]}%")
-    # if params[:query].present?
-    #   @products = Product.where(name: params[:query])
+    if params[:query].present?
+      @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @products = Product.all
     end
@@ -20,6 +16,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def create
@@ -53,10 +50,10 @@ class ProductsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+
   def search
-    # @products = Product.all
-    # @product.where(:name )
   end
+
 
   private
 
