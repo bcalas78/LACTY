@@ -53,10 +53,12 @@
         Be the first to leave a review for <strong><%= @product.name %></strong>
       <% else %>
         <% @product.reviews.each do |review| %>
-          <p id="review-<%= review.id %>"><%= review.comment %>
-          <small>
-          <strong>Invité n°<%= review.user.id %></strong>
-          <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+          <div class="card-comment">
+            <p id="review-<%= review.id %>"><%= review.comment %><br></p>
+            <small>
+            <strong>Licorne n°<%= review.user.id %></strong>
+            <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+          </div>
         </small>
         </p>
         <% end %>
@@ -70,24 +72,6 @@
           <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
         <% end %>
     </div>
-
-
-
-      <%# <% if @product.reviews.blank? %>
-        <%# Be the first to leave a review for <strong><%= @product.name %>
-      <%# <% else %>
-        <%# <% @product.reviews.each do |review| %>
-          <%# <p id="review-<%= review.id %>
-        <%# <% end %>
-      <%# <% end %>
-    <%# </div> %>
-    <%# <%= simple_form_for([ @product, @review ],
-                          data: { insert_in_list_target: "form",
-                          action: "submit->insert-in-list#send"
-                           })  do |f| %>
-    <%# <%= f.input :comment, as: :text, label: "Votre commentaire:" %>
-    <%# <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
-    <%# <% end %>
 </div>
 
 
