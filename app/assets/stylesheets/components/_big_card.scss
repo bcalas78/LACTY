@@ -1,9 +1,10 @@
 .big-card1 {
   overflow: hidden;
-  height: 225px;
+  height: auto;
   background: white;
   display: flex;
   align-items: center;
+  margin-bottom: 100px;
   padding: 10px;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
@@ -16,8 +17,9 @@
 
 .big-card2 {
   overflow: hidden;
-  height: 225px;
+  height: auto;
   background: white;
+  margin-bottom: 100px;
   padding: 10px;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
