@@ -37,3 +37,14 @@
     height: 60px;
   }
 }
+
+
+.card-comment {
+  background: rgb(238, 238, 238);
+  box-shadow: 0 0 15px rgba(162, 215, 236 ,0.2);
+  border-radius: 5px;
+  padding: 2px;
+  p {
+    font-weight: bold;
+ }
+}
