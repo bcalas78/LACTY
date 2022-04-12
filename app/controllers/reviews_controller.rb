@@ -7,22 +7,30 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    # @product = Product.find(params[:product_id])
     @reviews = Review.new
   end
 
   def create
+    @user = current_user
     @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
+    @review.user = @user
     @review.product = @product
-    if @review.save
-      redirect_to product_path(@product, anchor: "review-#{@review.id}")
-    else
-      render 'products/show'
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to product_path(@product) }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render "products/show" }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
     end
   end
 
   def edit
-    set_review if user_signed_in? && current_user_id == @user_id
+    # set_review if user_signed_in? && current_user_id == @user_id
   end
 
   def update
