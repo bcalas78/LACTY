@@ -4,7 +4,7 @@
   background: white;
   display: flex;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   padding: 10px;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
@@ -19,7 +19,7 @@
   overflow: hidden;
   height: auto;
   background: white;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   padding: 10px;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
@@ -27,4 +27,8 @@
   p{
     color: black;
   }
+}
+
+.alt {
+  margin-bottom: 100px;
 }
