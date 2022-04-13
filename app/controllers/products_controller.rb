@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :authenticate_user!, only: :toggle_favorite
 
   def new
     @product = Product.new
@@ -7,6 +8,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @favorite_products = current_user.favorited_by_type('Product')
     if params[:query].present?
       @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
     else
@@ -50,10 +52,13 @@ class ProductsController < ApplicationController
     redirect_to product_path(@product)
   end
 
-
   def search
   end
 
+  def toggle_favorite
+    @product = Product.find(params[:id])
+    current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
+  end
 
   private
 

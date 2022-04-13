@@ -58,6 +58,10 @@
             <small>
             <strong>Licorne n°<%= review.user.id %></strong>
             <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+            <% if review.user.id == current_user.id %>
+              <%= link_to "edit", edit_review_path(review) %>
+              <%= link_to "delete", review_path(review), method: :delete %>
+            <% end %>
           </div>
         </small>
         </p>

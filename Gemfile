@@ -27,6 +27,8 @@ gem 'cloudinary', '~> 1.16.0'
 
 gem 'rails_admin', '~> 2.0'
 
+gem 'acts_as_favoritor'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

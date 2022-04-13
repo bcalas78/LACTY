@@ -1,20 +1,26 @@
-
-<h1 style="color: white" class="text-center">Résultats de la Recherche</h1>
-<div class="row mb-5">
-  <div class="col-12">
-      <% @products.last(3).each do |product| %>
+<div>
+  <h1 style="color: white" class="text-center mt-3">Liste des produits</h1>
+  <div class="row mb-5">>
+    <div class="col-12 mb-5">
+      <% @products.last(5).each do |product| %>
         <div class="card-product">
-         <%= image_tag product.image, crop: :fill %>
+          <%= link_to toggle_favorite_product_path(product), remote: true, method: :post do %>
+            <%= render 'products/like_button', product: product %>
+          <% end %>
+          <%= image_tag product.image %>
           <div class="card-body">
             <h5 class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
           </div>
         </div>
       <% end %>
+    </div>
   </div>
 </div>
 
 
-<div class="redirection-links d-flex justify-content-evenly mt-4 fixed-bottom">
+
+<div class="d-flex justify-content-evenly mt-4 fixed-bottom">
+  <a href="/favorite" class="btn blue-btn1" role="button" aria-pressed="true"><i class="fa-solid fa-heart-circle-check"></i> Favoris</a>
   <a href="/products/new" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>
   <a href="/search" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Recherche</a>
 </div>

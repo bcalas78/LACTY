@@ -1,10 +1,16 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @reviews = Review.all
   end
+
+  # def show
+  #   # @product = Product.find(params[:id])
+  #   @review = Review.find(params[:id])
+  # end
 
   def new
     # @product = Product.find(params[:product_id])
@@ -30,18 +36,20 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    # set_review if user_signed_in? && current_user_id == @user_id
+    @product = Product.find(@review.product_id)
   end
 
   def update
+    @product = Product.find(@review.product_id)
     @review.update(review_params)
-    # redirect_to review_path
+    redirect_to product_path(@product)
   end
 
-  # def destroy
-  #   @review.destroy
-  #   # redirect_to root_path
-  # end
+  def destroy
+    @product = Product.find(@review.product_id)
+    @review.destroy
+    redirect_to product_path(@product)
+  end
 
   private
 

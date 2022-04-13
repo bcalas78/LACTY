@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  acts_as_favoritable
+
   has_many :reviews, dependent: :destroy
   belongs_to :category
 
