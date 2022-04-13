@@ -74,6 +74,20 @@
     </div>
 </div>
 
+<h1 style="color: white" class="text-center">Alternatives</h1>
+
+<div class="alt">
+<% @products.last(5).each do |product| %>
+  <% if product.category.name == "green" %>
+      <div class="card-product-a">
+        <%= image_tag product.image, crop: :fill %>
+        <div class="card-product-infos">
+          <p class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></p>
+        </div>
+      </div>
+  <% end %>
+<% end %>
+</div>
 
 <div class="redirection-links d-flex justify-content-evenly mt-4 fixed-bottom">
   <a href="/products/new" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>

@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @review = Review.new
+    @products = Product.all
   end
 
   def create
@@ -29,10 +30,10 @@ class ProductsController < ApplicationController
       @product = Product.create(product_params)
       if !!(@product.composition =~ (/\w*(fromage|beurre,|margarine|ferments|lactiques)\w*/i))
         @product.category = Category.find_by(name: "orange")
-      elsif !!(@product.composition =~ (/\w*(lait |_lait_| lait|cr(e|è|é)me|lactosérum|lact(o|a|u)se|cas(e|è|é)in|babeurre|yaourt)\w*/i))
-        @product.category = Category.find_by(name: "red")
-      elsif !!(@product.composition =~ (/\w*(sans lait|sans lactose|  )\w*/i))
+      elsif !!(@product.composition =~ (/(Peut(.*lait.*)|Traces(.*lait.*))/i))
         @product.category = Category.find_by(name: "green")
+      elsif !!(@product.composition =~ (/\w*(lait |_lait_|lait|cr(e|è|é)me|lactosérum|lact(o|a|u)se|cas(e|è|é)in|babeurre|yaourt)\w*/i))
+        @product.category = Category.find_by(name: "red")
       else
         @product.category = Category.find_by(name: "green")
       end
