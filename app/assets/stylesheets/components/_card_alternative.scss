@@ -1,0 +1,48 @@
+.card-product-a {
+  overflow: hidden;
+  height: 100px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 5px 0px;
+  justify-content: start;
+}
+
+.card-product-a img {
+  height: 100%;
+  width: 100px;
+  object-fit: contain;
+}
+
+.card-product-a h2 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.card-product-a p {
+  color: black;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-a .card-product-infos {
+  padding: 16px;
+  img{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.upcomingfestivals{
+
+  flex-basis: 42%;
+}
+
+.card-product-alt {
+
+}

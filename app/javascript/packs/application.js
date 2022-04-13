@@ -46,7 +46,7 @@ ScanditSDK.configure("AbZxahTjNbmiADJfSyuZ2iUaZRoeKa4GGl3V67g5g3qRfmyRxCI6gjwUiw
       .then(response => response.json())
       .then((data) => {
           formName.value = data.product.product_name_fr;
-          formCompo.value = data.product.ingredients_text_debug
+          formCompo.value = data.product.ingredients_text_fr
           formImg.value = data.product.image_url
         })
       }
