@@ -50,12 +50,21 @@ ScanditSDK.configure("AbZxahTjNbmiADJfSyuZ2iUaZRoeKa4GGl3V67g5g3qRfmyRxCI6gjwUiw
           formImg.value = data.product.image_url
         })
       }
-      // console.log(form)
 
-      // console.log(infos)
 
-      // console.log(data.product.ingredients_text_debug)
-      // console.log(data.product.product_name_fr)
-      // console.log(data.product.image_url)
+      // import { initSweetalert } from '../plugins/init_sweetalert';
 
-      // searchProducts(barcode)
+      // initSweetalert('#sweet-alert-demo', {
+      //   title: "Vous êtes sur de vouloir supprimer votre commentaire?",
+      //   text: "Cette action est irréversible !",
+      //   icon: "warning"
+      // }, (value) => {
+      //   if (value) {
+      //     const link = document.querySelector('.delete-link');
+      //     link.click();
+      //   }
+      // });
+
+
+      // <button id="sweet-alert-demo" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+      // <%= link_to review_path(review), method: :delete, class: "delete-link hidden" do %>
