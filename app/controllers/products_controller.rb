@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @items = ["lait", "Lait", "_Lait", "crème", "creme", "lactose", "lactosérum", "beurre", "ferments lactiques", "yaourt", "fromage", "margarine", "ferments", "_lactiques_,", "lactiques", "_lait _", "_lait_", "ferments _lactiques_"]
     @product = Product.find(params[:id])
     @review = Review.new
     @products = Product.all
@@ -45,7 +46,6 @@ class ProductsController < ApplicationController
     else
       render :new
     end
-    # instancier le produit (id) + instancier la catégorie du produit
   end
 
   def update

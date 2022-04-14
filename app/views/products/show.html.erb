@@ -42,7 +42,14 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show big-card1 active" id="composition" role="tabpanel" aria-labelledby="composition-tab">
-    <p><%=@product.composition %></p>
+    <%# <p><%=@product.composition %>
+    <% @product.composition.split.each do |word| %>
+      <% if @items.include?(word) %>
+        <strong><%= word %></strong>
+      <% else %>
+        <%= word %>
+      <% end %>
+    <% end %>
   </div>
 
   <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="tab-pane fade big-card2" id="comment" role="tabpanel" aria-labelledby="comment-tab">
@@ -83,9 +90,10 @@
 
 
 <div class="alt">
-  <% if @product.category.name == "red" || @product.category.name == "orange" %>
+  <% if @product.category.name == "red" %>
+  <%# || @product.category.name == "orange" %>
   <h1 style="color: white" class="text-center">Alternatives</h1>
-    <% @products.last(5).each do |product| %>
+    <% @products.last(3).each do |product| %>
       <% if product.category.name == "green" %>
           <div class="card-product-a">
             <%= image_tag product.image, crop: :fill %>
