@@ -21,10 +21,10 @@
   <% elsif @product.category.name == "orange" %>
         <h2>Vérifier la compatibilité de <strong><%= @product.name%></strong> en fonction de votre degré d'intolérance</h2>
         <p><em>En savoir plus:</em> <a href="../information#fromage" style="color: blue" class="text-decoration-none"><strong>Fromage -</strong></a>
-        <a href="../information#chocolat" class="text-decoration-none"> <strong>Chocolat -</strong></a>
-        <a href="../information#charcuterie" class="text-decoration-none"> <strong>Charcuterie -</strong></a>
-        <a href="../information#beurre" class="text-decoration-none"> <strong>Beurre -</strong></a>
-        <a href="../information#ferments" class="text-decoration-none"> <strong>Ferment lactiques</strong></a></p>
+        <a href="../information#chocolat" style="color: blue" class="text-decoration-none"> <strong>Chocolat -</strong></a>
+        <a href="../information#charcuterie" style="color: blue" class="text-decoration-none"> <strong>Charcuterie -</strong></a>
+        <a href="../information#beurre" style="color: blue" class="text-decoration-none"> <strong>Beurre -</strong></a>
+        <a href="../information#ferments" style="color: blue" class="text-decoration-none"> <strong>Ferment lactiques</strong></a></p>
   <% else @product.category.name == "red" %>
         <h2><strong><%= @product.name%></strong> ne convient pas aux intolérants au lactose!</h2>
         <a href="../board" style="color: blue" class="text-decoration-none"><strong>Teneur en lactose des produits laitiers</strong></a>
@@ -83,7 +83,7 @@
                             data: { insert_in_list_target: "form",
                             action: "submit->insert-in-list#send"
                             }) do |f| %>
-          <%= f.input :comment, as: :text, label: "Votre commentaire:"  %>
+          <%= f.input :comment, as: :text, label: "Votre commentaire:", style: "color: blue" %>
           <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
         <% end %>
     </div>
@@ -95,7 +95,7 @@
   <% if @product.category.name == "red" %>
   <%# || @product.category.name == "orange" %>
   <h1 style="color: white" class="text-center">Alternatives</h1>
-    <% @products.last(3).each do |product| %>
+    <% @products.last(5).each do |product| %>
       <% if product.category.name == "green" %>
           <div class="card-product-a">
             <%= image_tag product.image, crop: :fill %>
@@ -103,9 +103,9 @@
               <p class="card-title fw-bold"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></p>
             </div>
           </div>
+      <% else %>
       <% end %>
     <% end %>
-  <% else  %>
   <% end %>
 </div>
 
