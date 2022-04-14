@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @items = ["lait", "Lait", "_Lait", "crème", "creme", "lactose", "lactosérum", "beurre", "ferments lactiques", "yaourt", "fromage", "margarine", "ferments", "_lactiques_,", "lactiques", "_lait _", "_lait_", "ferments _lactiques_"]
+    @items = ["lait", "Lait", "_Lait", "_lait_.", "crème", "creme", "lactose", "lactosérum", "beurre", "ferments lactiques", "yaourt", "fromage", "margarine", "ferments", "_lactiques_,", "lactiques", "_lait _", "_lait_", "ferments _lactiques_"]
     @product = Product.find(params[:id])
     @review = Review.new
     @products = Product.all
