@@ -95,7 +95,7 @@
   <% if @product.category.name == "red" %>
   <%# || @product.category.name == "orange" %>
   <h1 style="color: white" class="text-center">Alternatives</h1>
-    <% @products.last(3).each do |product| %>
+    <% @products.last(5).each do |product| %>
       <% if product.category.name == "green" %>
           <div class="card-product-a">
             <%= image_tag product.image, crop: :fill %>
