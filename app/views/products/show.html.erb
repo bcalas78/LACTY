@@ -16,8 +16,6 @@
 </div>
 
 <div class="description text-center d-flex flex-column">
-  <%# <h2>Tout est bon dans Pom'Potes Pomme Nature !</h2> %>
-  <%# <h2>Tout est bon dans <%= @product.name%>
   <% if @product.category.name == "green" %>
         <h2>Tout est bon dans <strong><%= @product.name%></strong>!</h2>
   <% elsif @product.category.name == "orange" %>
