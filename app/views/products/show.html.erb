@@ -22,14 +22,14 @@
         <h2>Tout est bon dans <strong><%= @product.name%></strong>!</h2>
   <% elsif @product.category.name == "orange" %>
         <h2>Vérifier la compatibilité de <strong><%= @product.name%></strong> en fonction de votre degré d'intolérance</h2>
-        <p><em>En savoir plus:</em> <a href="../information#fromage" class="text-decoration-none"><strong>Fromage -</strong></a>
-        <a href="../information#chocolat" class="text-decoration-none"> <strong>Chocolat -</strong></a>
-        <a href="../information#charcuterie" class="text-decoration-none"> <strong>Charcuterie -</strong></a>
-        <a href="../information#beurre" class="text-decoration-none"> <strong>Beurre -</strong></a>
-        <a href="../information#ferments" class="text-decoration-none"> <strong>Ferment lactiques</strong></a></p>
+        <p><em>En savoir plus:</em> <a style="color: blue" href="../information#fromage" class="text-decoration-none"><strong>Fromage -</strong></a>
+        <a style="color: blue" href="../information#chocolat" class="text-decoration-none"> <strong>Chocolat -</strong></a>
+        <a style="color: blue" href="../information#charcuterie" class="text-decoration-none"> <strong>Charcuterie -</strong></a>
+        <a style="color: blue" href="../information#beurre" class="text-decoration-none"> <strong>Beurre -</strong></a>
+        <a style="color: blue" href="../information#ferments" class="text-decoration-none"> <strong>Ferment lactiques</strong></a></p>
   <% else @product.category.name == "red" %>
         <h2><strong><%= @product.name%></strong> ne convient pas aux intolérants au lactose!</h2>
-        <a href="../board" class="text-decoration-none"><strong>Teneur en lactose des produits laitiers</strong></a>
+        <a style="color: blue" href="../board" class="text-decoration-none"><strong>Teneur en lactose des produits laitiers</strong></a>
   <% end %>
 </div>
 
@@ -50,21 +50,26 @@
   <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" class="tab-pane fade big-card2" id="comment" role="tabpanel" aria-labelledby="comment-tab">
     <div data-insert-in-list-target="items" id="reviews">
       <% if @product.reviews.blank? %>
-        Be the first to leave a review for <strong><%= @product.name %></strong>
+        Soyez le premier à laisser un commentaire pour <strong><%= @product.name %>.</strong>
       <% else %>
         <% @product.reviews.each do |review| %>
-          <div class="card-comment">
+          <div class="card-comment mb-2">
             <p id="review-<%= review.id %>"><%= review.comment %><br></p>
             <small>
-            <strong>Licorne n°<%= review.user.id %></strong>
-            <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-            <% if review.user.id == current_user.id %>
-              <%= link_to "edit", edit_review_path(review) %>
-              <%= link_to "delete", review_path(review), method: :delete %>
-            <% end %>
+              <div class="d-flex justify-content-around">
+                <strong>Licorne n°<%= review.user.id %></strong>
+                <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+                <% if review.user.id == current_user.id %>
+                  <%= link_to edit_review_path(review) do %>
+                    <i class="fa-solid fa-file-pen"></i>
+                  <% end %>
+                  <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </small>
           </div>
-        </small>
-        </p>
         <% end %>
       <% end %>
     </div>
@@ -72,10 +77,10 @@
                             data: { insert_in_list_target: "form",
                             action: "submit->insert-in-list#send"
                             }) do |f| %>
-          <%= f.input :comment, as: :text, label: "Votre commentaire:"  %>
+          <strong style="color: blue"><%= f.input :comment, as: :text, label: "Votre commentaire:" %></strong>
           <%= f.button :submit, class: "blue-btn1", value: 'Envoyer' %>
         <% end %>
-    </div>
+  </div>
 </div>
 
 <h1 style="color: white" class="text-center">Alternatives</h1>
