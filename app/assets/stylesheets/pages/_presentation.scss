@@ -1,0 +1,176 @@
+
+// class generale
+
+.card-profily {
+  background-color: rgba(165, 165, 165, 0.664);
+  border-radius: 32px;
+  margin: auto;
+  margin-bottom: 15px;
+  // larger de me carte
+  width: 1000px;
+  box-shadow: 3px 3px 4px rgb(255, 136, 0);
+
+
+}
+.presentation-equipe{
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 100vw;
+
+
+}
+
+.title-page {
+  background-color: rgb(255, 136, 0);
+
+  height: 50px;
+  width: 250px;
+  border-radius: 92px;
+  h2 {
+    text-decoration: underline dotted;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 8px
+ }
+
+}
+
+
+.description {
+
+  width: 1000px;
+  height: 150px;
+  vertical-align: center;
+  border-radius: 100px;
+  overflow-y: visible;
+
+  h2{
+color: white;
+text-shadow: 1px 1px 2px rgba(206, 205, 205, 0.836);
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: auto;
+  }
+}
+
+
+
+
+
+.text-description {
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  display: flex;
+  text-align: center;
+  p{
+    font-style: inherit;
+    margin: 16px;
+    text-align: justify;
+    margin-top: -0%;
+  }
+
+}
+
+
+.lacty-profily {
+  display: flex;
+  width: 1000px;
+  height: 330px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 100px;
+
+  p{
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgba(226, 226, 226, 0.863);
+
+  }
+
+
+}
+
+
+
+.photo-profily  img{
+  display: block;
+  border-radius: 50%;
+  margin: auto;
+  align-items: center;
+
+}
+
+
+
+.bureaux {
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+  border-radius: 100px;
+
+}
+
+
+
+.carte img {
+  border-radius: 60px;
+  height: 200px;
+  width: 280px;
+
+
+}
+
+
+.adress {
+  border-radius: 50px;
+  padding: 16px;
+  background-color: rgba(240, 255, 255, 0.685);
+  flex-direction: column-reverse;
+
+  h1 {
+    color: black;
+    text-decoration: wavy overline rgba(2, 148, 2, 0);
+    text-decoration: underline;
+
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .card-profily {
+    width: 96vw;
+  flex-direction: column;
+}
+.lacty-profily {
+  // width: 100vw;
+  height: 110vh;
+padding: 50spx;
+
+
+}
+.bureaux {
+  // width: 100%;
+  height: 400px;
+}
+.description {
+  // width: 100vw;
+  height: 330px;
+  width: 70;
+
+}
+.text-description{
+  text-align: center;
+  font-weight: 100;
+  margin-top: 5%;
+
+}
+.photo-profily{
+  padding: 10px;
+}
+}

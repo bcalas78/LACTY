@@ -16,7 +16,7 @@
               <%= link_to "Favoris", "/favorite", class: "dropdown-item" %>
               <%= link_to "Informations produits", "/information", class: "dropdown-item" %>
               <%= link_to "Teneur en lactose", "/board", class: "dropdown-item" %>
-              <%= link_to "A propos", "#", class: "dropdown-item" %>
+              <%= link_to "A propos", presentation_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
@@ -28,7 +28,7 @@
               <%= link_to "Historique", "/products", class: "dropdown-item" %>
               <%= link_to "Informations produits", "/information", class: "dropdown-item" %>
               <%= link_to "Teneur en lactose", "/board", class: "dropdown-item" %>
-              <%= link_to "A propos", "#", class: "dropdown-item" %>
+              <%= link_to "A propos", presentation_path, class: "dropdown-item" %>
               <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
             </div>
           </li>
