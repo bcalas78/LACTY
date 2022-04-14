@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'search', to: "products#search"
   resources :products, only: [:new, :show, :create, :index]
+  get 'presentation', to: "pages#presentation_equipe"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
