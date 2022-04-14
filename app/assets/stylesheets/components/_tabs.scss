@@ -1,29 +1,9 @@
-// .tabs-underlined {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-// }
-
-.tabs-underlined .tab-underlined {
+#comment-tab {
   color: black;
-  padding: 8px;
-  margin: 8px;
-  opacity: .4;
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 4px solid transparent;
+  font-weight: bolder;
 }
 
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
-}
-
-.tabs {
-  // overflow: hidden;
-  height: 50px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // display: flex;
-  // align-items: center;
+#composition-tab {
+  color: black;
+  font-weight: bolder;
 }

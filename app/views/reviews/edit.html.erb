@@ -1,0 +1,7 @@
+
+<div class="card-edit">
+  <%= simple_form_for @review do |f| %>
+    <strong><%= f.input :comment, label: "Votre commentaire:" %></strong>
+    <%= f.submit "Mettre à jour", class: "blue-btn1", value: 'Mettre à jour' %>
+  <% end %>
+</div>

@@ -12,6 +12,10 @@
             <%= image_tag "Avatar_licorne.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", root_path, class: "dropdown-item" %>
+              <%= link_to "Historique", "/products", class: "dropdown-item" %>
+              <%= link_to "Favoris", "/favorite", class: "dropdown-item" %>
+              <%= link_to "Informations produits", "/information", class: "dropdown-item" %>
+              <%= link_to "Teneur en lactose", "/board", class: "dropdown-item" %>
               <%= link_to "A propos", presentation_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
@@ -20,7 +24,10 @@
         <li class="nav-item dropdown">
             <%= image_tag "Avatar_licorne.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Home", root_path, class: "dropdown-item" %>
+              <%= link_to "Home", "/board", class: "dropdown-item" %>
+              <%= link_to "Historique", "/products", class: "dropdown-item" %>
+              <%= link_to "Informations produits", "/information", class: "dropdown-item" %>
+              <%= link_to "Teneur en lactose", "/board", class: "dropdown-item" %>
               <%= link_to "A propos", presentation_path, class: "dropdown-item" %>
               <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
             </div>

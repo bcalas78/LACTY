@@ -1,12 +1,19 @@
-.description-vert {
-  overflow: hidden;
-  height: 100px;
+.description {
+  padding: 5px 0px;
+  overflow: scroll;
+  height: auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  // overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
   h2 {
-    font-size: 21px;
+    font-size: 22px;
+  }
+  p {
+    color: black;
   }
 }

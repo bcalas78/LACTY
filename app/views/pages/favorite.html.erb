@@ -1,0 +1,17 @@
+<div class="col-12 alt">
+  <h1 style="color: white" class="text-center mt-3">Mes Favoris</h1>
+    <div style="color: white" class="favorites mt-5 mb-3">
+      <% @favorite_products.each do |product| %>
+        <div>
+          <%= render 'products/product', product: product %>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-evenly mt-4 fixed-bottom">
+  <a href="/products" class="btn blue-btn1" role="button" aria-pressed="true"><i class="fa-solid fa-indent"></i> Historique</a>
+  <a href="/products/new" class="btn btn-scan" role="button" aria-pressed="true"><i class="fa-solid fa-barcode"></i> Scan</a>
+  <a href="/search" class="btn btn-search" role="button" aria-pressed="true"><i class="fa-solid fa-magnifying-glass"></i> Recherche</a>
+</div>
