@@ -16,8 +16,6 @@
 </div>
 
 <div class="description text-center d-flex flex-column">
-  <%# <h2>Tout est bon dans Pom'Potes Pomme Nature !</h2> %>
-  <%# <h2>Tout est bon dans <%= @product.name%>
   <% if @product.category.name == "green" %>
         <h2>Tout est bon dans <strong><%= @product.name%></strong>!</h2>
   <% elsif @product.category.name == "orange" %>
@@ -63,7 +61,7 @@
                   <%= link_to edit_review_path(review) do %>
                     <i class="fa-solid fa-file-pen"></i>
                   <% end %>
-                  <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <%= link_to review_path(review), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer ce message?" } do %>
                     <i class="fa-solid fa-trash-can"></i>
                   <% end %>
                 <% end %>
