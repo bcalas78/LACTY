@@ -7,7 +7,7 @@ It's a kind of Yuka but to find if there is lactose or not in the food products.
 
 Skills: RAILS / RUBY / JS / HTML / CSS
 
-- 🔭 I’m currently working on this page. You can find it in https://rails-lacty-836.herokuapp.com/ 
+- 🔭 I’m currently working on this page. You can find it in https://rails-lacty-836.herokuapp.com/ or [lacty.xyz](http://www.lacty.xyz/).
 
 
 
